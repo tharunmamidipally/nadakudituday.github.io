@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /><!--Just charset-->
+    <meta name="language" content="English"><!--for language-->
+    <meta name="viewport" id="myViewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><!--for viewport-->
+    <meta name="description" content="Convet Digital to Handwritten Scanned Page."><!--for description of website | upto 160 characters only-->
+    <meta name="keywords" content="Assginment Writer, Convet Digital to Handwritten Scanned Page."><!--for keywords-->
+    <meta name="theme-color" content="#1dd1a1" /><!--for android chrome topbar theme-->
+    <link rel="shortcut icon" href="assets/images/favicon-128.png"><!--fevicon -->
+    <meta property="og:type" content="website" /><!--for telling about website-->
+   
+    <meta property="og:description" content="Convet Digital to Handwritten Scanned Page." /><!--for fb description-->
+    <meta property="og:image" content="https://repository-images.githubusercontent.com/259044567/41a85d00-a39c-11ea-9cf7-756bb25160a0" /><!--for fb image-->
+    
+    <meta property="og:site_name" content="Copy Pasta" /><!--for overall company name-->
+    <meta property="fb:app_id" content="620425188558211" />
+  
+    <meta name="robots" content="index, follow"><!--for google crawling-->
+    <title>Assign AI</title>
+    <link rel="icon" href="aa.png">
+    <style>
+        :root{
+            --color: #01345B;/*the initial lightness*/
+            --color-primary: #01345B;
+            --color-primary-darker: #01345B;
+            --color-primary-darkest: #01345B;
+        }
+
+        .navbar
+{
+    background-color: white;
+    padding: 30px 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.08);
+    transition: all 0.5s ease;
+}
+.navbar.navbar-shrink
+{
+    padding: 20px 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+.navbar > .container
+{
+    padding: 0 15px;
+}
+.navbar .navbar-brand
+{
+    font-size: 30px;
+    color: #a800a8;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.navbar .nav-item
+{
+    margin-left: 35px;
+}
+.navbar .nav-item .nav-link
+{
+    color: #555555;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+}
+.navbar .nav-item .nav-link::before
+{
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 0;
+    background-color: #a800a8;
+    left: 50%;
+    top: -45px;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-out 0s;
+}
+.navbar .nav-item .nav-link.active,
+.navbar .nav-item .nav-link:hover
+{
+    color: #a800a8;
+}
+.navbar .nav-item .nav-link.active::before,
+.navbar .nav-item .nav-link:hover::before
+{
+    height: 45px;
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/milligram.min.css">
+    <link href="assets/css/fa/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="manifest" href="manifest.json">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script> <script>
+   
+   
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+</script>
+
+</head>
+<body>
+    <main class="wrapper">
+       
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+              <!-- brand -->
+              <a href="index.html" class="navbar-brand">Assign AI</a>
+              <!-- toggler/collapsible button -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i class="fas fa-bars"></i>
+              </button>
+              <!-- navbar links -->
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-scroll-nav="0">home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#uss" class="nav-link" data-scroll-nav="1">about us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#index" class="nav-link" data-scroll-nav="2">services</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <section class="parallax">
+            <center><h2 id="text">Assign AI</h2></center>
+            <img src="aibot.jpg" id="m1">
+          
+          </section>
+        
+        <section class="container" id="uss">
+            <h3>Write Your Assignment !</h3><br>
+            <form onsubmit="return false">
+                <fieldset>
+                    <textarea placeholder="Enter Text You want to be written a paper...." id="dataField" onkeyup="myData = this.value"></textarea>
+                </fieldset>
+                <input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
+                <input class="button-primary button-large download-image hidden" type="file" id="fontUploader" onclick="">
+                <div class="row">
+                    <button class="column button-primary button-large inline-btn" id="btnPageUpload">Upload Page</button>
+                    <button class="column button-primary button-large inline-btn" onclick="loadPage()">Default Page</button>
+                    <button class="column button-primary button-large inline-btn" onclick="changeFont()">Switch Font</button>
+                    <button class="column button-primary button-large inline-btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</button>
+                    <button class="column button-primary button-large download-image inline-btn" onclick="save(str(pageNum++))">Download Page</button>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label>Adjust X axis</label>
+                        <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="slider">
+                    </div>
+                    <div class="column">
+                        <label>Adjust Y axis</label>
+                        <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="slider">
+                    </div>
+                    <div class="column">
+                        <label>Font Size</label>
+                        <input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" class="slider">
+                    </div>
+                    <div class="column">
+                        <label>width</label>
+                        <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="slider">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label>Line Spacing</label>
+                        <input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" class="slider" step="0.01">
+                    </div>
+                </div>
+            </form>
+            <div id="contributing"></div>
+        </section>
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+
+    <div class="indu" id="index">
+      <h1>Our Services</h1>
+      <div class="uday">
+        <div class="service">
+          <i class="fas fa-laptop-code"></i>
+          <h2>Web Design</h2>
+          <p>
+            Web design refers to the design of websites that are displayed on the internet.
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-chart-line"></i>
+          <h2>Marketing</h2>
+          <p>
+            Social media marketing is the use of social media platforms and websites to promote a product or service.
+          </p>
+        </div>
+        <div class="service">
+          <i class="fab fa-sketch"></i>
+          <h2>Graphics</h2>
+          <p>
+            Designing a graphic overlay for social media posts
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-database"></i>
+          <h2>Data Analysis</h2>
+          <p>
+            Data analysis is the process of inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information,
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-mobile-alt"></i>
+          <h2>App Development</h2>
+          <p>
+            App developers are software engineers who construct applications for use on the web, on operating systems like Windows and MacOS or on mobile platforms like iOS and Android
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-file-invoice"></i>
+          <h2>Accounting</h2>
+          <p>
+            the measurement, processing, and communication of financial and non-financial information about economic 
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-money-check-alt"></i>
+          <h2>Payroll</h2>
+          <p>
+            A payroll is the list of employees of some company that is entitled to receive payments
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-network-wired"></i>
+          <h2>Networking</h2>
+          <p>
+            A computer network is a set of computers sharing resources located on or provided by network nodes
+          </p>
+        </div>
+      </div>
+    </div>
+  
+        <footer class="new_footer_area bg_color">
+            <div class="new_footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                                <p>"From pixels to paper, the website breathed life into my assignments, turning digital dreams into written realities."</p>
+                                <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                                    <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                    <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                                    <p class="mchimp-errmessage" style="display: none;"></p>
+                                    <p class="mchimp-sucmessage" style="display: none;"></p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Download</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="#">Company</a></li>
+                                    <li><a href="#">Android App</a></li>
+                                    <li><a href="#">ios App</a></li>
+                                    <li><a href="#">Desktop</a></li>
+                                    <li><a href="#">Projects</a></li>
+                                    <li><a href="#">My tasks</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Term &amp; conditions</a></li>
+                                    <li><a href="#">Reporting</a></li>
+                                    <li><a href="#">Documentation</a></li>
+                                    <li><a href="#">Support Policy</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                                <div class="f_social_icon">
+                                    <a href="#" class="fab fa-youtube"></a>
+                                    <a href="#" class="fab fa-instagram"></a>
+                                    <a href="#" class="fab fa-linkedin"></a>
+                                    <a href="#" class="fab fa-github"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bg">
+                    <div class="footer_bg_one"></div>
+                    <div class="footer_bg_two"></div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-sm-7">
+                            <p class="mb-0 f_400">© Assign AI Inc 2023 All rights reserved.</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-5 text-right">
+                            <p>Made with <i class="icon_heart"></i>  <a href="index.html" target="_blank">Assign AI</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="assets/js/p5.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/extend.js"></script>
+    <script src="assets/js/sketch.js"></script>
+    
+  
+    <script>
+     if ('serviceWorker' in navigator) {
+     navigator.serviceWorker
+         .register('./sw.js', { scope: './' })
+         .then(() => {
+             console.info('Service Worker Registered');
+         }, err => console.error("Service Worker registration failed: ", err));
+
+     navigator.serviceWorker
+         .ready
+         .then(() => {
+             console.info('Service Worker Ready');
+         });
+ }
+
+ gsap.from("#m1",{
+    scrollTrigger : {
+      scrub: true
+    },
+    y: 100,
+  })
+  gsap.from("#m2",{
+    scrollTrigger : {
+      scrub: true
+    },
+    y: 50,
+  })
+  gsap.from("#t2",{
+    scrollTrigger : {
+      scrub: true
+    },
+    x: -50,
+  })
+  gsap.from("#t1",{
+    scrollTrigger : {
+      scrub: true
+    },
+    x: 50,
+  })
+  gsap.from("#man",{
+    scrollTrigger : {
+      scrub: true
+    },
+    x: -250,
+  })
+  gsap.from("#plants",{
+    scrollTrigger : {
+      scrub: true
+    },
+    x: -50,
+  })
+  gsap.from("#text",{
+    scrollTrigger : {
+      scrub: true
+    },
+    x: 600,
+  })
+
+
+ </script>
+ </body>
+</html>
